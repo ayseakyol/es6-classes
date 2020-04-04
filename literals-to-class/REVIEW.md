@@ -1,8 +1,8 @@
 # es6-classes/
 
-> 2020-4-4 13:43:47 
+> 2020-4-5 00:43:35 
 
-## literals-to-class/ - syntaxError
+## literals-to-class/ - pass
 
 * [../REVIEW.md](../REVIEW.md)
 
@@ -11,7 +11,7 @@
 * [challenge-1.js](#challenge-1js---pass) - pass
 * [challenge-2.js](#challenge-2js---pass) - pass
 * [challenge-3.js](#challenge-3js---pass) - pass
-* [challenge-4.js](#challenge-4js---syntaxError) - syntaxError
+* [challenge-4.js](#challenge-4js---pass) - pass
 * [example.js](#examplejs---pass) - pass
 
 ---
@@ -419,26 +419,33 @@ console.assert(test8b, "Test 8.B");
 
 ---
 
-## challenge-4.js - syntaxError
+## challenge-4.js - pass
 
 * [review source](challenge-4.js)
 
 ```txt
- [...] /literals-to-class/challenge-4.js:77
-  state = {
-        ^
-
-SyntaxError: Unexpected token =
-    at createScript (vm.js:80:10)
-    at Object.runInThisContext (vm.js:139:10)
-    at Module._compile (module.js:617:28)
-    at Object.Module._extensions..js (module.js:664:10)
-    at Module.load (module.js:566:32)
-    at tryModuleLoad (module.js:506:12)
-    at Function.Module._load (module.js:498:3)
-    at Module.require (module.js:597:17)
-    at require (internal/module.js:11:18)
-    at evaluateFile ( [...] /review.js:101:5)
++ PASS: Test 1.A - instanceof
++ PASS: Test 1.B 
++ PASS: Test 2.A - own properties
++ PASS: Test 2.B
++ PASS: Test 3.A - not-own properties
++ PASS: Test 3.B
++ PASS: Test 4.A - initial values
++ PASS: Test 4.B
++ PASS: Test 5.A - .all("evens")
++ PASS: Test 5.B
++ PASS: Test 6.A - .all("odds")
++ PASS: Test 6.B
++ PASS: Test 7.A - .all("nanys")
++ PASS: Test 7.B
++ PASS: Test 8.A - new values
++ PASS: Test 8.B
++ PASS: Test 9.A - .all("evens")
++ PASS: Testt 9.B
++ PASS: Test 10.A - .all("odds")
++ PASS: Test 10.B
++ PASS: Test 11.A - .all("nanys")
++ PASS: Test 11.B
 ```
 
 ```js
@@ -515,14 +522,14 @@ const literal2 = {
 // the solution
 class Stringanizer {
   constructor(values) {
-    // this.state = values;
+    this.state = {
+      evens: [],
+      odds: [],
+      nanys: [],
+    };
     values.forEach((x) => this.addString(x));
   }
-  state = {
-    evens: [],
-    odds: [],
-    nanys: [],
-  };
+
   addString(newStr) {
     if (typeof newStr !== "string") {
       return false;

@@ -71,14 +71,14 @@ const literal2 = {
 // the solution
 class Stringanizer {
   constructor(values) {
-    // this.state = values;
+    this.state = {
+      evens: [],
+      odds: [],
+      nanys: [],
+    };
     values.forEach((x) => this.addString(x));
   }
-  state = {
-    evens: [],
-    odds: [],
-    nanys: [],
-  };
+
   addString(newStr) {
     if (typeof newStr !== "string") {
       return false;

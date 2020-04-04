@@ -1,11 +1,11 @@
 # es6-classes/
 
-> 2020-4-4 13:43:47 
+> 2020-4-5 00:43:35 
 
-## ./ - syntaxError
+## ./ - pass
 
 
 ### sub-directories
 
-* [literals-to-class/](./literals-to-class/REVIEW.md) - syntaxError
+* [literals-to-class/](./literals-to-class/REVIEW.md) - pass
 
